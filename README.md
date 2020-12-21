@@ -1,1 +1,1 @@
-### vanilla - simple package manager
+# Vanilla - simple package manager
