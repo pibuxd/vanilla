@@ -2,7 +2,6 @@
 <h1>Vanilla</h1>
 
 [pibux.pl](https://pibux.pl) |
-[Docs](https://github.com/pibuxd/vanilla/blob/main/doc/docs.md) |
 </div>
 <div align="center">
 </div>
