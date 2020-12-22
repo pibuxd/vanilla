@@ -1,4 +1,11 @@
-# Vanilla - simple package manager
+<div align="center">
+<h1>Vanilla</h1>
+
+[pibux.pl](https://pibux.pl |
+[Docs](https://github.com/pibuxd/vanilla/doc/docs) |
+</div>
+<div align="center">
+</div>
 
 ## Objectives
 There's a point in everyone's life when you feel the need to write a package manager because there are only about ∞ of them. So say hi to ∞+1.
