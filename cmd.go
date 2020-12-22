@@ -1,16 +1,8 @@
 package main
 
 import (
-	"encoding/json"
 	"fmt"
 )
-
-type Package struct {
-	Name     string
-	Type     string
-	Version  string
-	Location string
-}
 
 func handleExist(packageName string) {
 	// check if the package exists
@@ -18,7 +10,18 @@ func handleExist(packageName string) {
 }
 
 func handleCreate() {
+	packageType := ""
+	fmt.Printf("Type [bin/src]: ")
+	fmt.Scanf("%s", &packageType)
 
+	if packageType == "bin" {
+		createBin()
+	} else if packageType == "src" {
+		createSrc()
+	} else {
+		fmt.Println("[ERROR] Wrong type")
+		handleCreate()
+	}
 }
 
 func handleSync(packageName string) {
