@@ -12,7 +12,6 @@
 | `vanilla q` | List all installed packages|
 | `vanilla e <package>` | Search for already installed packages|
 
-+ It can be also connected e.g. `vanilla upug`, `vanilla up ug`vanilla q` | List all installed packages|
-| `vanilla e <package>` | Search for already installed packages|
++ It can be also connected e.g. `vanilla upug`, `vanilla up ug`
 
 + It can be also connected e.g. `vanilla upug`, `vanilla up ug`
