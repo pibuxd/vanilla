@@ -29,13 +29,16 @@ func main() {
 		handleListAll()
 
 	case "e":
-		handleAlreadyInstalled(packageName)
+		handleExist(packageName)
 
 	case "up":
 		handleUpdate()
 
 	case "ug":
 		handleUpgrade()
+
+	case "cr":
+		handleCreate()
 
 	default:
 		usage()
