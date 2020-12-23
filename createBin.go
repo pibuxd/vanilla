@@ -27,7 +27,7 @@ func createBin() {
 	//command3 := "-H \"Content-Type: multipart/form-data\""
 
 	//c := exec.Command("curl", string(command1), string(command2), string(command3))
-	c := exec.Command("sh", "uploadBin.sh", string(packagePath))
+	c := exec.Command("sh", "scripts/uploadBin.sh", string(packagePath))
 	err := c.Run()
 
 	if err != nil {

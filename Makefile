@@ -1,8 +1,11 @@
 build:
-	go build -o /usr/bin/vanilla .
+	sudo go build -o /usr/bin/vanilla .
+	mkdir ${HOME}/vanilla
+	cp -r scripts ${HOME}/vanilla
 
 remove:
-	rm /usr/bin/vanilla
+	sudo rm /usr/bin/vanilla
+	rm ${HOME}/vanilla
 
 run:
 	go run .

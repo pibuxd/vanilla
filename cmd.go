@@ -10,6 +10,8 @@ func handleExist(packageName string) {
 }
 
 func handleCreate() {
+	// ask if binary or source package and handle it
+
 	packageType := ""
 	fmt.Printf("Type [bin/src]: ")
 	fmt.Scanf("%s", &packageType)
