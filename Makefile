@@ -5,7 +5,7 @@ build:
 
 remove:
 	sudo rm /usr/bin/vanilla
-	rm ${HOME}/vanilla
+	rm -rf ${HOME}/vanilla
 
 run:
 	go run .
