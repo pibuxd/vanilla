@@ -12,7 +12,7 @@ But this is quite nice:
 + minimalistic
 + fast
 + light
-
+### it just works
 Vanilla works on most Linux
 ## Installation
 ```sh
