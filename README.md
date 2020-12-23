@@ -1,7 +1,7 @@
 <div align="center">
 <h1>Vanilla</h1>
 
-[pibux.pl](https://pibux.pl) |
+[pibux.pl](https://pibux.pl) [repos](https://pibux.pl/repos)
 </div>
 <div align="center">
 </div>
@@ -9,7 +9,7 @@
 ## Objectives
 There's a point in everyone's life when you feel the need to write a package manager because there are only about ∞ of them. So say hi to ∞+1.
 But this is quite nice:
-+ minimalistic
++ minimalism
 + fast
 + light
 ### it just works
