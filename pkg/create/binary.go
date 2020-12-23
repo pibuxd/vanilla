@@ -2,11 +2,11 @@ package create
 
 import (
 	"fmt"
-	//"github.com/pibuxd/vanilla/pkg/types"
+	. "github.com/pibuxd/vanilla/pkg/types"
 	"os/exec"
 )
 
-func createBin() {
+func Bin() {
 	P := Package{}
 	P.Type = "bin"
 

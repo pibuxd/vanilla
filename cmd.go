@@ -18,9 +18,9 @@ func handleCreate() {
 	fmt.Scanf("%s", &packageType)
 
 	if packageType == "bin" {
-		createBin()
+		create.Bin()
 	} else if packageType == "src" {
-		createSrc()
+		create.Src()
 	} else {
 		fmt.Println("[ERROR] Wrong type")
 		handleCreate()

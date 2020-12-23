@@ -2,11 +2,11 @@ package create
 
 import (
 	"fmt"
-	//"github.com/pibux/vanilla/pkg/types"
+	. "github.com/pibuxd/vanilla/pkg/types"
 	"os/exec"
 )
 
-func createSrc() {
+func Src() {
 	P := Package{}
 	P.Type = "src"
 
