@@ -1,8 +1,8 @@
 package main
 
 import (
-	"./create"
 	"fmt"
+	"github.com/pibuxd/vanilla/create"
 )
 
 func handleExist(packageName string) {
