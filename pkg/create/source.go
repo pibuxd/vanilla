@@ -3,6 +3,7 @@ package create
 import (
 	"fmt"
 	. "github.com/pibuxd/vanilla/pkg/types"
+	"os"
 	"os/exec"
 )
 
@@ -28,10 +29,12 @@ func Src() {
 	//command3 := "-H \"Content-Type: multipart/form-data\""
 
 	//c := exec.Command("curl", string(command1), string(command2), string(command3))
-	c := exec.Command("sh", "scripts/uploadSrc.sh", string(packagePath))
+	c := exec.Command("sh", os.Getenv("HOME")+"/vanilla/pkg/scripts/uploadSrc.sh", string(packagePath))
 	err := c.Run()
 
 	if err != nil {
-		fmt.Println(err)
+		fmt.Println("error: " + err)
 	}
+
+	fmt.Println("succes: Uploaded")
 }
