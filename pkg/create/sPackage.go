@@ -1,4 +1,4 @@
-package types
+package create
 
 type Package struct {
 	Name     string
