@@ -16,7 +16,7 @@ But this is quite nice:
 + Vanilla works on most Linux
 ## Installation
 ```sh
-git clone https://github.com/pibuxd/vanilla
+git clone https://github.com/pibuxd/vanilla ${HOME}/vanilla
 cd vanilla
 make build
 ```
