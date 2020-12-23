@@ -2,7 +2,7 @@ package create
 
 import (
 	"fmt"
-	"github.com/pibuxd/vanilla"
+	"github.com/pibuxd/vanilla/pkg/type"
 	"os/exec"
 )
 

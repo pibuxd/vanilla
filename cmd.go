@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/pibuxd/vanilla/create"
+	"github.com/pibuxd/vanilla/pkg/create"
 )
 
 func handleExist(packageName string) {
