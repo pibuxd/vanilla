@@ -5,25 +5,25 @@ import (
 	"fmt"
 	c "github.com/logrusorgru/aurora"
 	"github.com/pibuxd/vanilla/pkg/create"
-	t "github.com/pibuxd/vanilla/pkg/types"
+	//"github.com/pibuxd/vanilla/pkg/install"
+	. "github.com/pibuxd/vanilla/pkg/types"
 	"io/ioutil"
 	"os"
+	"strings"
 )
 
 func handleExist(packageName string) bool {
 	// check if the package exists
 
-	P := []t.Package{}
+	P := []Package{}
 	data, err := ioutil.ReadFile(os.Getenv("HOME") + "/vanilla/data/installed-packages.json")
 	if err != nil {
-		t.printError()
-		fmt.Println(err)
+		fmt.Println(c.Bold(c.Red("error: ")), err)
 	}
 
 	err = json.Unmarshal([]byte(data), &P)
 	if err != nil {
-		t.printError()
-		fmt.Println(err)
+		fmt.Println(c.Bold(c.Red("error: ")), err)
 	}
 
 	for _, p := range P {
@@ -38,17 +38,16 @@ func handleExist(packageName string) bool {
 func handleCreate() {
 	// ask if binary or source package and handle it
 
+	fmt.Printf(c.Sprintf(c.Bold(c.Magenta(":: "))) + c.Sprintf(c.Bold("Type [bin/src]: ")))
 	packageType := ""
-	fmt.Printf("Type [bin/src]: ")
 	fmt.Scanf("%s", &packageType)
 
-	if packageType == "bin" {
+	if strings.Contains(packageType, "b") {
 		create.Bin()
-	} else if packageType == "src" {
+	} else if strings.Contains(packageType, "s") {
 		create.Src()
 	} else {
-		t.printError()
-		fmt.Println("Wrong type")
+		fmt.Println(c.Bold(c.Red("error:")), "Wrong type")
 		handleCreate()
 	}
 }
@@ -57,11 +56,19 @@ func handleSync(packageName string) {
 	// install package
 
 	if handleExist(packageName) {
-		fmt.Printf("Package %s already exists\n", c.Blue(packageName))
+		fmt.Printf(c.Sprintf(c.Bold(c.Red("error: ")))+"Package %s already exists\n", c.Bold(c.Magenta(packageName)))
 		return
 	}
+	fmt.Printf("resolving dependencies...\nlooking for conflicting packages...\n\n")
+	fmt.Printf(c.Sprintf(c.Bold("Package %s\n\n"), c.Bold(c.Magenta(packageName))))
+	fmt.Printf(c.Sprintf(c.Bold(c.Magenta(":: "))) + c.Sprintf(c.Bold("Proceed with installation? [Y/n]: ")))
+	ifInst := ""
+	fmt.Scanf("%s", &ifInst)
 
-	fmt.Printf(c.Sprintf(c.Bold("Installing:: %s\n"), c.Blue(packageName)))
+	if strings.Contains(ifInst, "n") {
+		return
+	}
+	//install.installPackage(packageName)
 }
 
 func handleRemove(packageName string) {

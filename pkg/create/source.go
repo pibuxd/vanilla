@@ -2,25 +2,26 @@ package create
 
 import (
 	"fmt"
-	. "github.com/pibuxd/vanilla/pkg/types"
+	c "github.com/logrusorgru/aurora"
+	t "github.com/pibuxd/vanilla/pkg/types"
 	"os"
 	"os/exec"
 )
 
 func Src() {
-	P := Package{}
+	P := t.Package{}
 	P.Type = "src"
 
 	//packagePath := ""
 	//fmt.Printf("Path to package: ")
 	//fmt.Scanf("%s", &packagePath)
 
-	fmt.Printf("Name: ")
+	fmt.Printf(c.Sprintf(c.Bold(c.Magenta(":: "))) + c.Sprintf(c.Bold("Name: ")))
 	fmt.Scanf("%s", &P.Name)
 
 	P.Location = "/usr/bin/" + string(P.Name)
 
-	fmt.Printf("Version: ")
+	fmt.Printf(c.Sprintf(c.Bold(c.Magenta(":: "))) + c.Sprintf(c.Bold("Version: ")))
 	fmt.Scanf("%s", &P.Version)
 	packagePath := "/home/pibu/Vanilla/server/files/main.tar.gz"
 
@@ -28,13 +29,15 @@ func Src() {
 	//command2 := "-F \"file=@" + string(packagePath) + "\""
 	//command3 := "-H \"Content-Type: multipart/form-data\""
 
-	//c := exec.Command("curl", string(command1), string(command2), string(command3))
-	c := exec.Command("sh", os.Getenv("HOME")+"/vanilla/pkg/scripts/uploadSrc.sh", string(packagePath))
-	err := c.Run()
+	//cmd := exec.Command("curl", string(command1), string(command2), string(command3))
+	cmd := exec.Command("sh", os.Getenv("HOME")+"/vanilla/pkg/scripts/uploadSrc.sh", string(packagePath))
+	err := cmd.Run()
 
 	if err != nil {
-		fmt.Println("error: ", err)
+		fmt.Println(c.Bold(c.Red("error: ")), err)
+		return
 	}
 
-	fmt.Println("succes: Uploaded")
+	fmt.Printf("\n")
+	fmt.Println(c.Bold(c.Green("success: ")), "Uploaded")
 }
