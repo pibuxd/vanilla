@@ -13,7 +13,7 @@ But this is quite nice:
 + fast
 + light
 ### it just works
-Vanilla works on most Linux
++ Vanilla works on most Linux
 ## Installation
 ```sh
 git clone https://github.com/pibuxd/vanilla
