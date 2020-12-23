@@ -8,6 +8,10 @@
 
 ## Objectives
 There's a point in everyone's life when you feel the need to write a package manager because there are only about ∞ of them. So say hi to ∞+1.
+But this is quite nice:
++ minimalistic
++ fast
++ light
 
 Vanilla works on most Linux
 ## Installation
