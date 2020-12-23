@@ -2,7 +2,7 @@ package create
 
 import (
 	"fmt"
-	"github.com/pibux/vanilla/v1/pkg/type"
+	"github.com/pibux/vanilla/v1/pkg/types"
 	"os/exec"
 )
 
