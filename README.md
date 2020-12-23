@@ -1,7 +1,7 @@
 <div align="center">
 <h1>Vanilla</h1>
 
-[pibux.pl](https://pibux.pl) [repos](https://pibux.pl/repos)
+[pibux.pl](https://pibux.pl) | [repos](https://pibux.pl/repos)
 </div>
 <div align="center">
 </div>
