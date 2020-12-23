@@ -1,13 +1,38 @@
 package main
 
 import (
+	"encoding/json"
 	"fmt"
+	c "github.com/logrusorgru/aurora"
 	"github.com/pibuxd/vanilla/pkg/create"
+	t "github.com/pibuxd/vanilla/pkg/types"
+	"io/ioutil"
+	"os"
 )
 
-func handleExist(packageName string) {
+func handleExist(packageName string) bool {
 	// check if the package exists
-	return
+
+	P := []t.Package{}
+	data, err := ioutil.ReadFile(os.Getenv("HOME") + "/vanilla/data/installed-packages.json")
+	if err != nil {
+		t.printError()
+		fmt.Println(err)
+	}
+
+	err = json.Unmarshal([]byte(data), &P)
+	if err != nil {
+		t.printError()
+		fmt.Println(err)
+	}
+
+	for _, p := range P {
+		if p.Name == packageName {
+			return true
+		}
+	}
+
+	return false
 }
 
 func handleCreate() {
@@ -22,14 +47,21 @@ func handleCreate() {
 	} else if packageType == "src" {
 		create.Src()
 	} else {
-		fmt.Println("[ERROR] Wrong type")
+		t.printError()
+		fmt.Println("Wrong type")
 		handleCreate()
 	}
 }
 
 func handleSync(packageName string) {
 	// install package
-	return
+
+	if handleExist(packageName) {
+		fmt.Printf("Package %s already exists\n", c.Blue(packageName))
+		return
+	}
+
+	fmt.Printf(c.Sprintf(c.Bold("Installing:: %s\n"), c.Blue(packageName)))
 }
 
 func handleRemove(packageName string) {

@@ -33,7 +33,7 @@ func Src() {
 	err := c.Run()
 
 	if err != nil {
-		fmt.Println("error: " + err)
+		fmt.Println("error: ", err)
 	}
 
 	fmt.Println("succes: Uploaded")

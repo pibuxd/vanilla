@@ -1,0 +1,15 @@
+[
+  {
+    "Name": "main",
+    "Type": "bin",
+    "Version": "1.5",
+    "Location": "/usr/bin"
+  },
+  {
+    "Name": "main",
+    "Type": "src",
+    "Version": "2.1",
+    "Location": "/bin"
+  }
+]
+

@@ -1,8 +1,8 @@
 package types
 
 type Package struct {
-	Name     string
-	Type     string
-	Version  string
-	Location string
+	Name     string `json:"Name"`
+	Type     string `json:"Type"`
+	Version  string `json:"Version"`
+	Location string `json:"Location"`
 }
