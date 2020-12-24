@@ -6,7 +6,7 @@ import (
 	c "github.com/logrusorgru/aurora"
 	"github.com/pibuxd/vanilla/pkg/create"
 	//"github.com/pibuxd/vanilla/pkg/install"
-	. "github.com/pibuxd/vanilla/pkg/types"
+	t "github.com/pibuxd/vanilla/pkg/types"
 	"io/ioutil"
 	"os"
 	"strings"
@@ -15,7 +15,7 @@ import (
 func handleExist(packageName string) bool {
 	// check if the package exists
 
-	P := []Package{}
+	P := []t.Package{}
 	data, err := ioutil.ReadFile(os.Getenv("HOME") + "/vanilla/data/installed-packages.json")
 	if err != nil {
 		fmt.Println(c.Bold(c.Red("error: ")), err)
@@ -78,7 +78,18 @@ func handleRemove(packageName string) {
 
 func handleListAll() {
 	// print package names with location from json file
-	return
+	P := []t.Package{}
+
+	data, err := ioutil.ReadFile(os.Getenv("HOME") + "/vanilla/data/installed-packages.json")
+	if err != nil {
+		fmt.Println(c.Bold(c.Red("error: ")), err)
+	}
+
+	err = json.Unmarshal([]byte(data), &P)
+
+	for _, p := range P {
+		fmt.Println(c.Bold(c.Blue(p.Name)), c.Bold(p.Version))
+	}
 }
 
 func handleUpdate() {

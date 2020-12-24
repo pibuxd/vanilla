@@ -1,9 +1,11 @@
 package create
 
 import (
+	"encoding/json"
 	"fmt"
 	c "github.com/logrusorgru/aurora"
 	t "github.com/pibuxd/vanilla/pkg/types"
+	"io/ioutil"
 	"os"
 	"os/exec"
 )
@@ -12,9 +14,11 @@ func Bin() {
 	P := t.Package{}
 	P.Type = "bin"
 
-	//packagePath := ""
+	packagePath := ""
+	packagePath = "/home/pibu/Vanilla/server/files/main-bin"
 	//fmt.Printf("Path to package: ")
 	//fmt.Scanf("%s", &packagePath)
+
 	fmt.Printf(c.Sprintf(c.Bold(c.Magenta(":: "))) + c.Sprintf(c.Bold("Name: ")))
 	fmt.Scanf("%s", &P.Name)
 
@@ -22,18 +26,24 @@ func Bin() {
 
 	fmt.Printf(c.Sprintf(c.Bold(c.Magenta(":: "))) + c.Sprintf(c.Bold("Version: ")))
 	fmt.Scanf("%s", &P.Version)
-	packagePath := "/home/pibu/Vanilla/server/files/main-bin"
 
-	//command1 := "-X POST http://pibux.pl:2137/upload"
-	//command2 := "-F \"file=@" + string(packagePath) + "\""
-	//command3 := "-H \"Content-Type: multipart/form-data\""
+	file, err := json.Marshal(P)
+	if err != nil {
+		fmt.Println(c.Bold(c.Red("\nerror: ")), err)
+		return
+	}
 
-	//cmd := exec.Command("curl", string(command1), string(command2), string(command3))
+	err = ioutil.WriteFile("/home/pibu/Vanilla/server/files/main-bin.json", file, 0644)
+	if err != nil {
+		fmt.Println(c.Bold(c.Red("\nerror: ")), err)
+		return
+	}
+
 	cmd := exec.Command("sh", os.Getenv("HOME")+"/vanilla/pkg/scripts/uploadBin.sh", string(packagePath))
-	err := cmd.Run()
+	err = cmd.Run()
 
 	if err != nil {
-		fmt.Println(c.Bold(c.Red("error: ")), err)
+		fmt.Println(c.Bold(c.Red("\nerror: ")), err)
 		return
 	}
 

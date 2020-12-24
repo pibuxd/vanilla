@@ -25,8 +25,8 @@ make build
 
 | Command                         | Description                                                                                                                                         |
 | ------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `vanilla s <package>`             | Sync package |
-| `vanilla r <package>`                       | Remove package|
+| `vanilla s <package(s)>`             | Sync package(s) |
+| `vanilla r <package(s)>`                       | Remove package(s)|
 | `vanilla up`                       | Update all packages |
 | `vanilla ug`          | Upgrade all packages|
 | `vanilla se <package>`                | Search for package|
