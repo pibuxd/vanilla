@@ -12,18 +12,18 @@ import (
 	"strings"
 )
 
-func handleExist(packageName string) bool {
+func Exists(packageName string) bool {
 	// check if the package exists
 
 	P := []t.Package{}
-	data, err := ioutil.ReadFile(os.Getenv("HOME") + "/vanilla/data/installed-packages.json")
+	data, err := ioutil.ReadFile(os.Getenv("HOME") + "/.vanilla/data/installed-packages.json")
 	if err != nil {
-		fmt.Println(c.Bold(c.Red("error: ")), err)
+		fmt.Println(c.Bold(c.Red("error:")), err)
 	}
 
 	err = json.Unmarshal([]byte(data), &P)
 	if err != nil {
-		fmt.Println(c.Bold(c.Red("error: ")), err)
+		fmt.Println(c.Bold(c.Red("error:")), err)
 	}
 
 	for _, p := range P {
@@ -55,7 +55,7 @@ func handleCreate() {
 func handleSync(packageName string) {
 	// install package
 
-	if handleExist(packageName) {
+	if Exists(packageName) {
 		fmt.Printf(c.Sprintf(c.Bold(c.Red("error: ")))+"Package %s already exists\n", c.Bold(c.Magenta(packageName)))
 		return
 	}
@@ -73,16 +73,21 @@ func handleSync(packageName string) {
 
 func handleRemove(packageName string) {
 	// remove package
-	return
+
+	if !Exists(packageName) {
+		fmt.Println(c.Bold(c.Red("error:")), "package", c.Bold(c.Red(packageName)), "was not found")
+		return
+	}
+	// TODO: deleting from json and /bin
 }
 
 func handleListAll() {
 	// print package names with location from json file
 	P := []t.Package{}
 
-	data, err := ioutil.ReadFile(os.Getenv("HOME") + "/vanilla/data/installed-packages.json")
+	data, err := ioutil.ReadFile(os.Getenv("HOME") + "/.vanilla/data/installed-packages.json")
 	if err != nil {
-		fmt.Println(c.Bold(c.Red("error: ")), err)
+		fmt.Println(c.Bold(c.Red("error:")), err)
 	}
 
 	err = json.Unmarshal([]byte(data), &P)
@@ -90,6 +95,27 @@ func handleListAll() {
 	for _, p := range P {
 		fmt.Println(c.Bold(c.Blue(p.Name)), c.Bold(p.Version))
 	}
+}
+
+func handleExist(packageName string) {
+	P := []t.Package{}
+	data, err := ioutil.ReadFile(os.Getenv("HOME") + "/.vanilla/data/installed-packages.json")
+	if err != nil {
+		fmt.Println(c.Bold(c.Red("error:")), err)
+	}
+
+	err = json.Unmarshal([]byte(data), &P)
+	if err != nil {
+		fmt.Println(c.Bold(c.Red("error:")), err)
+	}
+
+	for _, p := range P {
+		if p.Name == packageName {
+			fmt.Println(c.Bold(c.Blue(p.Name)), c.Bold(p.Version))
+		}
+	}
+
+	fmt.Println(c.Bold(c.Red("error:")), "package", c.Bold(c.Red(packageName)), "was not found")
 }
 
 func handleUpdate() {
@@ -103,7 +129,9 @@ func handleUpgrade() {
 }
 
 func usage() {
-	fmt.Println(`Usage:
+	// print manual
+
+	fmt.Println(`usage:
   vanilla
   vanilla <operation> [...]
   

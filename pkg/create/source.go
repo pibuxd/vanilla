@@ -8,6 +8,8 @@ import (
 	"io/ioutil"
 	"os"
 	"os/exec"
+	"path"
+	"strings"
 )
 
 func Src() {
@@ -19,8 +21,7 @@ func Src() {
 	//fmt.Printf(c.Sprintf(c.Bold(c.Magenta(":: "))) + c.Sprintf(c.Bold("Path to package: ")))
 	//fmt.Scanf("%s", &packagePath)
 
-	fmt.Printf(c.Sprintf(c.Bold(c.Magenta(":: "))) + c.Sprintf(c.Bold("Name: ")))
-	fmt.Scanf("%s", &P.Name)
+	P.Name = strings.TrimSuffix(strings.TrimSuffix(path.Base(packagePath), path.Ext(path.Base(packagePath))), path.Ext(path.Base(strings.TrimSuffix(path.Base(packagePath), path.Ext(path.Base(packagePath))))))
 
 	fmt.Printf(c.Sprintf(c.Bold(c.Magenta(":: "))) + c.Sprintf(c.Bold("Location of compiled binary: ")))
 	fmt.Scanf("%s", &P.Location)

@@ -8,6 +8,7 @@ import (
 	"io/ioutil"
 	"os"
 	"os/exec"
+	"path"
 )
 
 func Bin() {
@@ -19,10 +20,9 @@ func Bin() {
 	//fmt.Printf("Path to package: ")
 	//fmt.Scanf("%s", &packagePath)
 
-	fmt.Printf(c.Sprintf(c.Bold(c.Magenta(":: "))) + c.Sprintf(c.Bold("Name: ")))
-	fmt.Scanf("%s", &P.Name)
+	P.Name = path.Base(packagePath)
 
-	P.Location = "/usr/bin/" + string(P.Name)
+	P.Location = "/bin/" + string(P.Name)
 
 	fmt.Printf(c.Sprintf(c.Bold(c.Magenta(":: "))) + c.Sprintf(c.Bold("Version: ")))
 	fmt.Scanf("%s", &P.Version)
