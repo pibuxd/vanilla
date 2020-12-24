@@ -5,7 +5,7 @@ import (
 	"fmt"
 	c "github.com/logrusorgru/aurora"
 	"github.com/pibuxd/vanilla/pkg/create"
-	//"github.com/pibuxd/vanilla/pkg/install"
+	"github.com/pibuxd/vanilla/pkg/install"
 	t "github.com/pibuxd/vanilla/pkg/types"
 	"io/ioutil"
 	"os"
@@ -68,7 +68,8 @@ func handleSync(packageName string) {
 	if strings.Contains(ifInst, "n") {
 		return
 	}
-	//install.installPackage(packageName)
+
+	install.installPackage(packageName)
 }
 
 func handleRemove(packageName string) {
