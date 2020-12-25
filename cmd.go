@@ -103,6 +103,7 @@ func handleExist(packageName string) {
 	for _, p := range P {
 		if p.Name == packageName {
 			fmt.Println(c.Bold(c.Blue(p.Name)), c.Bold(p.Version))
+			return
 		}
 	}
 

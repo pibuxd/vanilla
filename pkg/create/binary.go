@@ -22,8 +22,6 @@ func Bin() {
 
 	P.Name = path.Base(packagePath)
 
-	P.Location = "/bin/" + string(P.Name)
-
 	fmt.Printf(c.Sprintf(c.Bold(c.Magenta(":: "))) + c.Sprintf(c.Bold("Version: ")))
 	fmt.Scanf("%s", &P.Version)
 

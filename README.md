@@ -15,12 +15,13 @@ But this is quite nice:
 ### it just works
 + Vanilla works on most Linux
 ## Installation
+### manual
 ```sh
 git clone https://github.com/pibuxd/vanilla ${HOME}/vanilla
 cd vanilla
 make build
 ```
-
++ in future in repositories of other package managers
 ## Operations
 
 | Command                         | Description                                                                                                                                         |
@@ -34,3 +35,9 @@ make build
 | `vanilla e <package>` | Search for already installed packages|
 | `vanilla cr` | Create new package|
 + It can be also connected e.g. `vanilla up ug`
+
+## Adding a new package to the [repositories]("https://pibux.pl/repos")
++ have to be compressed to tar.gz
++ have to be included Makefile where `make install` installs and `make remove` removes a package
++ the first time a package is installed, it needs a password
++ the updated package needs to enter the password you created

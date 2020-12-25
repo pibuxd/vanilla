@@ -2,14 +2,12 @@
   {
     "Name": "main",
     "Type": "bin",
-    "Version": "1.5",
-    "Location": "/usr/bin"
+    "Version": "1.5"
   },
   {
     "Name": "main",
     "Type": "src",
-    "Version": "2.1",
-    "Location": "/bin"
+    "Version": "2.1"
   }
 ]
 
