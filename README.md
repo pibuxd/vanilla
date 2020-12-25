@@ -37,7 +37,7 @@ make build
 + It can be also connected e.g. `vanilla up ug`
 
 ## Adding a new package to the [repositories]("https://pibux.pl/repos")
-+ have to be compressed to tar.gz
-+ have to be included Makefile where `make install` installs and `make remove` removes a package
++ have to be compressed into tar.gz
++ Makefile have to be included where `make install` installs and `make remove` removes a package
 + the first time a package is installed, it needs a password
 + the updated package needs to enter the password you created
