@@ -39,7 +39,7 @@ func Bin() {
 		return
 	}
 
-	cmd := exec.Command("sh", os.Getenv("HOME")+"/vanilla/pkg/scripts/uploadBin.sh", string(packagePath))
+	cmd := exec.Command("sh", os.Getenv("HOME")+"/vanilla/pkg/scripts/upload.sh", string(packagePath))
 	err = cmd.Run()
 
 	if err != nil {

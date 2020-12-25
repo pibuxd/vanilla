@@ -29,7 +29,7 @@ func Src() {
 	fmt.Printf(c.Sprintf(c.Bold(c.Magenta(":: "))) + c.Sprintf(c.Bold("Version: ")))
 	fmt.Scanf("%s", &P.Version)
 
-	cmd := exec.Command("sh", os.Getenv("HOME")+"/vanilla/pkg/scripts/uploadSrc.sh", string(packagePath))
+	cmd := exec.Command("sh", os.Getenv("HOME")+"/vanilla/pkg/scripts/upload.sh", string(packagePath))
 	err := cmd.Run()
 
 	file, err := json.Marshal(P)

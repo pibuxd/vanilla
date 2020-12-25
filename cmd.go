@@ -57,19 +57,9 @@ func handleSync(packageName string) {
 
 	if Exists(packageName) {
 		fmt.Printf(c.Sprintf(c.Bold(c.Red("error: ")))+"Package %s already exists\n", c.Bold(c.Magenta(packageName)))
-		return
+	} else {
+		install.firstCheck(packageName)
 	}
-	fmt.Printf("resolving dependencies...\nlooking for conflicting packages...\n\n")
-	fmt.Printf(c.Sprintf(c.Bold("Package %s\n\n"), c.Bold(c.Magenta(packageName))))
-	fmt.Printf(c.Sprintf(c.Bold(c.Magenta(":: "))) + c.Sprintf(c.Bold("Proceed with installation? [Y/n]: ")))
-	ifInst := ""
-	fmt.Scanf("%s", &ifInst)
-
-	if strings.Contains(ifInst, "n") {
-		return
-	}
-
-	install.installPackage(packageName)
 }
 
 func handleRemove(packageName string) {
