@@ -12,7 +12,7 @@ But this is quite nice:
 + minimalism
 + fast
 + light
-+
+
 ### which is not working yet
 + dependiencies and conflicts
 
@@ -25,7 +25,9 @@ make build
 ```
 + in future in repositories of other package managers
 
-<h3>If you want to remove just</h3> `make remove`
+<h3>If you want to remove just</h3>
+`make remove`
+
 ## Operations
 
 | Command                         | Description                                                                                                                                         |
