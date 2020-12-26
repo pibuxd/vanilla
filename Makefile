@@ -2,11 +2,13 @@
 
 build:
 	sudo go build -o /bin/vanilla .
-	mkdir ${HOME}/.vanilla
+	mkdir -p ${HOME}/.vanilla
 	cp -r ${HOME}/vanilla/data ${HOME}/.vanilla
+	cp -r ${HOME}/vanilla/pkg/scripts ${HOME}/.vanilla
 
 remove:
 	sudo rm /bin/vanilla
+	rm -rf ${HOME}/.vanilla/scripts
 
 run:
 	go run .

@@ -12,8 +12,10 @@ But this is quite nice:
 + minimalism
 + fast
 + light
-### it just works
-+ Vanilla works on most Linux
++
+### which is not working yet
++ dependiencies and conflicts
+
 ## Installation
 ### manual
 ```sh
@@ -22,6 +24,8 @@ cd vanilla
 make build
 ```
 + in future in repositories of other package managers
+
+<h3>If you want to remove just</h3> `make remove`
 ## Operations
 
 | Command                         | Description                                                                                                                                         |
@@ -33,11 +37,11 @@ make build
 | `vanilla se <package>`                | Search for package|
 | `vanilla q` | List all installed packages|
 | `vanilla e <package>` | Search for already installed packages|
-| `vanilla cr` | Create new package|
+| `vanilla cr` | Create new package to the repositories|
 + It can be also connected e.g. `vanilla up ug`
 
 ## Adding a new package to the [repositories]("https://pibux.pl/repos")
 + have to be compressed into tar.gz
-+ Makefile have to be included where `make install` installs and `make remove` removes a package
-+ the first time a package is installed, it needs a password
-+ the updated package needs to enter the password you created
++ Makefile has to be included where `make install` installs and `make remove` removes a package
++ the first time the package is thrown in, it needs a password
++ every update of package needs password entry

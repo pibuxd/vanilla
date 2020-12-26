@@ -1,13 +1,1 @@
-[
-  {
-    "Name": "main",
-    "Type": "bin",
-    "Version": "1.5"
-  },
-  {
-    "Name": "main",
-    "Type": "src",
-    "Version": "2.1"
-  }
-]
-
+[]
