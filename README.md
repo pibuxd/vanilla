@@ -25,7 +25,7 @@ make build
 ```
 + in future in repositories of other package managers
 
-<h3>If you want to remove just</h3>
+### If you want to remove just
 `make remove`
 
 ## Operations
