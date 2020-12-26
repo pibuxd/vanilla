@@ -13,16 +13,19 @@ func NewPackage() {
 	P := t.Package{}
 
 	packagePath := ""
-	packagePath = "/home/pibu/Vanilla/server/files/main.tar.gz"
-	//fmt.Printf("Path to package: ")
-	//fmt.Scanf("%s", &packagePath)
+	fmt.Printf(c.Sprintf(c.Bold(c.Magenta(":: "))) + c.Sprintf(c.Bold("Version: ")))
+	fmt.Scanf("%s", &packagePath)
 
 	P.Name = path.Base(packagePath)
 
 	fmt.Printf(c.Sprintf(c.Bold(c.Magenta(":: "))) + c.Sprintf(c.Bold("Version: ")))
 	fmt.Scanf("%s", &P.Version)
 
-	f, err := os.Create(packagePath + ".txt")
+	haslo := ""
+	fmt.Printf(c.Sprintf(c.Bold(c.Magenta(":: "))) + c.Sprintf(c.Bold("Password: ")))
+	fmt.Scanf("%s", haslo)
+
+	f, err := os.Create(os.Getenv("HOME") + "/.vanilla/tmp/" + P.Name + ".txt")
 	if err != nil {
 		fmt.Println(c.Bold(c.Red("\nerror: ")), err)
 		return
@@ -37,6 +40,12 @@ func NewPackage() {
 	cmd := exec.Command("sh", os.Getenv("HOME")+"/.vanilla/scripts/upload.sh", string(packagePath))
 	err = cmd.Run()
 
+	if err != nil {
+		fmt.Println(c.Bold(c.Red("\nerror: ")), err)
+		return
+	}
+
+	err = os.Remove(os.Getenv("HOME") + "/.vanilla/tmp/" + P.Name + ".txt")
 	if err != nil {
 		fmt.Println(c.Bold(c.Red("\nerror: ")), err)
 		return
