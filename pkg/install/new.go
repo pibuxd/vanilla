@@ -49,4 +49,7 @@ func MakePackage(packageName string) {
 	if err != nil {
 		fmt.Println(c.Bold(c.Red("error:")), err)
 	}
+
+	fmt.Printf("\n")
+	fmt.Println(c.Bold(c.Green("success:")), c.Bold(c.Blue(packageName)), "has been installed")
 }

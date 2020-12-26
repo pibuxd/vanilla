@@ -65,7 +65,7 @@ func handleSync(packageName string) {
 		}
 	}
 
-	fmt.Printf(c.Sprintf(c.Bold(c.Magenta(":: "))) + c.Sprintf(c.Bold("Do you want to remove these packages? ")) + c.Sprintf(c.Bold("[Y/n]: ")))
+	fmt.Printf(c.Sprintf(c.Bold(c.Magenta(":: "))) + c.Sprintf(c.Bold("Proceed with installation? ")) + c.Sprintf(c.Bold("[Y/n]: ")))
 
 	ifInst := ""
 	fmt.Scanf("%s", &ifInst)
@@ -79,13 +79,13 @@ func handleRemove(packageName string) {
 	// remove package
 
 	if !Exists(packageName) {
-		fmt.Println(c.Bold(c.Red("error:")), "package", c.Bold(c.Red(packageName)), "was not found")
+		fmt.Println(c.Bold(c.Red("error:")), "package", c.Bold(c.Blue(packageName)), "was not found")
 		return
 	}
 
 	fmt.Println("Package", c.Bold(c.Blue(packageName)), "\n")
 
-	fmt.Printf(c.Sprintf(c.Bold(c.Magenta(":: "))) + c.Sprintf(c.Bold("Proceed ? ")) + c.Sprintf(c.Bold("[Y/n]: ")))
+	fmt.Printf(c.Sprintf(c.Bold(c.Magenta(":: "))) + c.Sprintf(c.Bold("Do you want to remove these packages? ")) + c.Sprintf(c.Bold("[Y/n]: ")))
 
 	ifInst := ""
 	fmt.Scanf("%s", &ifInst)
