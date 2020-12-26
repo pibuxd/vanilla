@@ -25,7 +25,6 @@ cd vanilla
 make build
 ```
 ### do not remove manually .vanilla !!
-+ in future in repositories of other package managers
 
 ### If you want to remove just
 `make remove`
