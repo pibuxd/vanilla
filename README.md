@@ -15,7 +15,7 @@ Vanilla is built for people who want to easily share projects. Also for official
 ### which is not working yet
 + update and upgrade (will work very very soon)
 + dependencies and conflicts
-+ passwords for created packages (just skip password entering)
++ passwords for created packages (just skip password entering) (will work very very soon)
 
 ## Installation
 ### manual
