@@ -13,6 +13,7 @@ Vanilla is built for people who want to easily share projects. Also for official
 + light
 
 ### which is not working yet
++ update and upgrade (will work very very soon)
 + dependiencies and conflicts
 + passwords for created packages (just skip password entering)
 
