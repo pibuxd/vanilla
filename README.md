@@ -7,14 +7,14 @@
 </div>
 
 ## Objectives
-There's a point in everyone's life when you feel the need to write a package manager because there are only about ∞ of them. So say hi to ∞+1.
-But this is quite nice:
+Vanilla is built for people who want to easily share projects. Also for official packages.
 + minimalism
 + fast
 + light
 
 ### which is not working yet
 + dependiencies and conflicts
++ passwords for created packages (just skip password entering)
 
 ## Installation
 ### manual
@@ -43,6 +43,7 @@ make build
 + It can be also connected e.g. `vanilla up ug`
 
 ## Adding a new package to the [repositories]("https://pibux.pl/repos")
++ it can be a binary and source :)
 + have to be compressed into tar.gz
 + Makefile has to be included where `sudo make install` installs and `sudo make remove` removes a package
 + the first time the package is thrown in, it needs a password
