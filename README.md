@@ -44,6 +44,6 @@ make build
 
 ## Adding a new package to the [repositories]("https://pibux.pl/repos")
 + have to be compressed into tar.gz
-+ Makefile has to be included where `make install` installs and `make remove` removes a package
++ Makefile has to be included where `sudo make install` installs and `sudo make remove` removes a package
 + the first time the package is thrown in, it needs a password
 + every update of package needs password entry
