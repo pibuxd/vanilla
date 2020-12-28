@@ -151,19 +151,19 @@ func handleUpgrade() {
 }
 
 func usage() {
-	// print manual
-
-	fmt.Println(`usage:
-  vanilla
-  vanilla <operation> [...]
+	name := os.Args[0]
+	
+	fmt.Printf(`Usage:
+  %s
+  %s <operation> [...]
   
 operations:
-  vanilla h              ==> help
-  vanilla s <package(s)> ==> sync package(s)
-  vanilla r <package(s)  ==> sync package(s)
-  vanilla up             ==> update all packages
-  vanilla ug             ==> upgrade all packages
-  vanilla se <package(s) ==> search for package(s)
-  vanilla q              ==> list all installed packages
-  vanilla e <package(s)  ==> search for already installed package(s)`)
+  %s h               ==> Display Usage
+  %s s  <package(s)> ==> Sync package(s)
+  %s r  <package(s)> ==> Remove package(s)
+  %s up              ==> Update all packages
+  %s ug              ==> Upgrade all packages
+  %s se <package(s)> ==> Search for package(s)
+  %s q               ==> List all installed packages
+  %s e  <package(s)> ==> Search in installed package(s)`, name, name, name, name, name, name, name, name, name, name)
 }
