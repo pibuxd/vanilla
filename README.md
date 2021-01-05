@@ -6,6 +6,9 @@
 <div align="center">
 </div>
 
+### Vanilla creation has been stopped for a while
+
+<!--
 ## Objectives
 Vanilla is built for people who want to easily share projects. Also for official packages.
 + minimalism
@@ -22,12 +25,13 @@ Vanilla is built for people who want to easily share projects. Also for official
 ```sh
 git clone https://github.com/pibuxd/vanilla ${HOME}/vanilla
 cd vanilla
-make build
+make
+sudo make install
 ```
 ### do not remove manually .vanilla !!
 
 ### If you want to remove just
-`make remove`
+`sudo make remove`
 
 ## Operations
 

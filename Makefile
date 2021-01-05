@@ -1,6 +1,6 @@
 # Do not manually remove ~/.vanilla directory
 
-.PHONY: all install uninstall clean setup
+.PHONY: all install remove clean setup
 
 all: setup
 	go build -o "./target/vanilla" .
@@ -17,5 +17,5 @@ clean:
 install:
 	if [ -f "./target/vanilla" ] ; then install -sm 755 "./target/vanilla" "/bin/vanilla"; fi
 
-uninstall:
+remove:
 	if [ -f "/bin/vanilla" ] ; then rm "/bin/vanilla"; fi

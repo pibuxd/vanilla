@@ -11,6 +11,7 @@ import (
 	"io/ioutil"
 	"net/http"
 	"os"
+	"path"
 	"strings"
 )
 
@@ -152,7 +153,8 @@ func handleUpgrade() {
 
 func usage() {
 	name := os.Args[0]
-	
+	name = path.Base(name)
+
 	fmt.Printf(`Usage:
   %s
   %s <operation> [...]
@@ -165,5 +167,6 @@ operations:
   %s ug              ==> Upgrade all packages
   %s se <package(s)> ==> Search for package(s)
   %s q               ==> List all installed packages
-  %s e  <package(s)> ==> Search in installed package(s)`, name, name, name, name, name, name, name, name, name, name)
+  %s e  <package(s)> ==> Search in installed package(s)
+  `, name, name, name, name, name, name, name, name, name, name)
 }

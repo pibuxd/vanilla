@@ -13,7 +13,7 @@ func NewPackage() {
 	P := t.Package{}
 
 	packagePath := ""
-	fmt.Printf(c.Sprintf(c.Bold(c.Magenta(":: "))) + c.Sprintf(c.Bold("Version: ")))
+	fmt.Printf(c.Sprintf(c.Bold(c.Magenta(":: "))) + c.Sprintf(c.Bold("Path to package: ")))
 	fmt.Scanf("%s", &packagePath)
 
 	P.Name = path.Base(packagePath)
