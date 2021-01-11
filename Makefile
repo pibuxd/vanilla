@@ -1,4 +1,4 @@
-# Do not manually remove ~/.vanilla directory
+# Do not manually remove /etc/vanilla directory
 
 .PHONY: all install remove clean setup
 
@@ -6,10 +6,13 @@ all: setup
 	go build -o "./target/vanilla" .
 
 setup:
+	mkdir -p "/etc/vanilla"
 	mkdir -p "./target"
-	mkdir -p "${HOME}/.vanilla/tmp"
-	cp -nr "./data" "${HOME}/.vanilla"
-	cp -r "./pkg/scripts" "${HOME}/.vanilla"
+	mkdir -p "/etc/vanilla/tmp"
+	mkdir -p "/etc/vanilla/data"
+	cp -r "./pkg/scripts" "/etc/vanilla"
+	if [ ! -f "/etc/vanilla/data/installed-packages.json" ] ; then echo "[]" >> /etc/vanilla/data/installed-packages.json
+	if [ ! -f "/etc/vanilla/config.json" ] ; then echo "{}" >> "/etc/vanilla/config.json"
 
 clean:
 	if [ -f "./target/vanilla" ] ; then rm "./target/vanilla"; fi

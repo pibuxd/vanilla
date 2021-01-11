@@ -15,13 +15,14 @@ import (
 	"strings"
 )
 
+
+// Exists check if the package exists
 func Exists(packageName string) bool {
-	// check if the package exists
 
 	P := []t.Package{}
 	data, err := ioutil.ReadFile(os.Getenv("HOME") + "/.vanilla/data/installed-packages.json")
 	if err != nil {
-		fmt.Println(c.Bold(c.Red("error:")), err)
+		fmt.Println(c.Bold(c.Red("error:")), "vanilla is broken, can't do anything about it")
 	}
 
 	err = json.Unmarshal([]byte(data), &P)
@@ -38,32 +39,29 @@ func Exists(packageName string) bool {
 	return false
 }
 
+// upload package to server
 func handleCreate() {
-	// upload package to server
-
 	create.NewPackage()
 }
 
+// install package
 func handleSync(packageName string) {
-	// install package
+	packageURL := "https://pibux.pl/data/" + packageName + ".tar.gz.txt"
 
-	packageUrl := "https://pibux.pl/data/" + packageName + ".tar.gz.txt"
-
-	resp, err := http.Get(packageUrl)
+	resp, err := http.Get(packageURL)
 	if err != nil {
-		fmt.Println(c.Bold(c.Red("error:")), err)
+		fmt.Println(c.Bold(c.Red("error:")), "vanilla is broken, can't do anything about it")
 	}
 
 	if resp.StatusCode != http.StatusOK {
 		fmt.Println(c.Bold(c.Red("error:")), "package", c.Bold(c.Blue(packageName)), "doesn't exist")
 		return
 
+	}
+	if Exists(packageName) {
+		fmt.Println("Package", c.Bold(c.Blue(packageName)), c.Bold(c.Yellow("warning:")), c.Yellow("reinstalling"), "\n")
 	} else {
-		if Exists(packageName) {
-			fmt.Println("Package", c.Bold(c.Blue(packageName)), c.Bold(c.Yellow("warning:")), c.Yellow("reinstalling"), "\n")
-		} else {
-			fmt.Println("Package", c.Bold(c.Blue(packageName)), "\n")
-		}
+		fmt.Println("Package", c.Bold(c.Blue(packageName)), "\n")
 	}
 
 	fmt.Printf(c.Sprintf(c.Bold(c.Magenta(":: "))) + c.Sprintf(c.Bold("Proceed with installation? ")) + c.Sprintf(c.Bold("[Y/n]: ")))
@@ -76,9 +74,8 @@ func handleSync(packageName string) {
 	}
 }
 
+// remove package
 func handleRemove(packageName string) {
-	// remove package
-
 	if !Exists(packageName) {
 		fmt.Println(c.Bold(c.Red("error:")), "package", c.Bold(c.Blue(packageName)), "was not found")
 		return
@@ -97,9 +94,8 @@ func handleRemove(packageName string) {
 
 }
 
+// print package names with location from json file
 func handleListAll() {
-	// print package names with location from json file
-
 	P := []t.Package{}
 
 	data, err := ioutil.ReadFile(os.Getenv("HOME") + "/.vanilla/data/installed-packages.json")
@@ -141,13 +137,13 @@ func handleExist(packageName string) {
 	fmt.Println(c.Bold(c.Red("error:")), "package", c.Bold(c.Blue(packageName)), "was not found")
 }
 
+// update all installed packages
 func handleUpdate() {
-	// update all installed packages
 	return
 }
 
+//upgrade all installed packages
 func handleUpgrade() {
-	//upgrade all installed packages
 	return
 }
 

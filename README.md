@@ -6,9 +6,6 @@
 <div align="center">
 </div>
 
-### Vanilla creation has been stopped for a while
-
-<!--
 ## Objectives
 Vanilla is built for people who want to easily share projects. Also for official packages.
 + minimalism
@@ -22,7 +19,7 @@ Vanilla is built for people who want to easily share projects. Also for official
 
 ## Installation
 ### manual
-```sh
+```sh 
 git clone https://github.com/pibuxd/vanilla ${HOME}/vanilla
 cd vanilla
 make
@@ -45,8 +42,7 @@ sudo make install
 | `vanilla q` | List all installed packages|
 | `vanilla e <package>` | Search for already installed packages|
 | `vanilla cr` | Create new package to the repositories|
-+ It can be also connected e.g. `vanilla up ug`
-
+> It can be also connected e.g. `vanilla up ug`
 ## Adding a new package to the [repositories]("https://pibux.pl/repos")
 + it can be a binary and source :)
 + have to be compressed into tar.gz
