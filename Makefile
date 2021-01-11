@@ -1,4 +1,4 @@
-# Do not manually remove /etc/vanilla directory
+# Do not remove /etc/vanilla directory
 
 .PHONY: all install remove clean setup
 

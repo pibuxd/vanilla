@@ -25,7 +25,7 @@ cd vanilla
 make
 sudo make install
 ```
-### do not remove manually .vanilla !!
+> Do not remove /etc/vanilla !
 
 ### If you want to remove just
 `sudo make remove`
@@ -44,8 +44,9 @@ sudo make install
 | `vanilla cr` | Create new package to the repositories|
 > It can be also connected e.g. `vanilla up ug`
 ## Adding a new package to the [repositories]("https://pibux.pl/repos")
-+ it can be a binary and source :)
++ it can be a binary or a source
 + have to be compressed into tar.gz
 + Makefile has to be included where `sudo make install` installs and `sudo make remove` removes a package
++ have to type dependiences in string like "firstackage second third"
 + the first time the package is thrown in, it needs a password
 + every update of package needs password entry
