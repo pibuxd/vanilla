@@ -8,7 +8,7 @@
 
 ## Objectives
 Vanilla is built for people who want to easily share projects. Also for official packages.
-+ minimalism
++ user-friendly
 + fast
 + light
 
