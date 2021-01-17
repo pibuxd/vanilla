@@ -50,5 +50,3 @@ sudo make install
 + have to type dependiences in string like "firstackage second third"
 + the first time the package is thrown in, it needs a password
 + every update of package needs password entry
-
-JD
