@@ -1,4 +1,4 @@
-#!bin/sh
+#!/bin/sh
 
 wget -q -o /dev/null --no-check-certificate -q --show-progress -r -np -nH --cut-dirs=3 -R index.html -P $HOME/.vanilla/packages/ "http://pibux.pl/repos/$1.tar.gz" 
 

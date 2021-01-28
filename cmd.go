@@ -49,10 +49,6 @@ func handleSync(packageName string) {
 	packageURL := "https://pibux.pl/data/" + packageName + ".tar.gz.txt"
 
 	resp, err := http.Get(packageURL)
-	if err != nil {
-		fmt.Println(c.Bold(c.Red("error:")), "vanilla is broken, can't do anything about it")
-	}
-
 	if resp.StatusCode != http.StatusOK {
 		fmt.Println(c.Bold(c.Red("error:")), "package", c.Bold(c.Blue(packageName)), "doesn't exist")
 		return
@@ -100,7 +96,7 @@ func handleListAll() {
 
 	data, err := ioutil.ReadFile(os.Getenv("HOME") + "/.vanilla/data/installed-packages.json")
 	if err != nil {
-		fmt.Println(c.Bold(c.Red("error:")), err)
+		fmt.Println(c.Bold(c.Red("error:")), "vanilla is broken, can't do anything about it")
 	}
 
 	err = json.Unmarshal([]byte(data), &P)
@@ -119,7 +115,7 @@ func handleExist(packageName string) {
 	P := []t.Package{}
 	data, err := ioutil.ReadFile(os.Getenv("HOME") + "/.vanilla/data/installed-packages.json")
 	if err != nil {
-		fmt.Println(c.Bold(c.Red("error:")), err)
+		fmt.Println(c.Bold(c.Red("error:")), "vanilla is broken, can't do anything about it")
 	}
 
 	err = json.Unmarshal([]byte(data), &P)
