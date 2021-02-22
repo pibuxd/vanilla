@@ -20,7 +20,7 @@ Vanilla is built for people who want to easily share projects. Also for official
 ## Installation
 ### manual
 ```sh 
-git clone https://github.com/pibuxd/vanilla ${HOME}/vanilla
+git clone github.com/pibuxd/vanilla -b v.0.1-alpha ${HOME}/vanilla
 cd vanilla
 make
 sudo make install
