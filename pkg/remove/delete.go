@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"io/ioutil"
 	"os/exec"
+
 	c "github.com/logrusorgru/aurora"
 	t "github.com/pibuxd/vanilla/pkg/types"
 )

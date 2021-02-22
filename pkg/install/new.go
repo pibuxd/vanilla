@@ -3,12 +3,13 @@ package install
 import (
 	"encoding/json"
 	"fmt"
-	c "github.com/logrusorgru/aurora"
-	"github.com/pibuxd/vanilla/pkg/remove"
-	t "github.com/pibuxd/vanilla/pkg/types"
 	"io/ioutil"
 	"net/http"
 	"os/exec"
+
+	c "github.com/logrusorgru/aurora"
+	"github.com/pibuxd/vanilla/pkg/remove"
+	t "github.com/pibuxd/vanilla/pkg/types"
 )
 
 // MakePackage creates package from tar.gz on computer
@@ -47,7 +48,7 @@ func MakePackage(packageName string) {
 	if err != nil {
 		fmt.Println(c.Bold(c.Red("error:")), "vanilla is broken, can't do anything about it")
 	}
-	
+
 	json.Unmarshal([]byte(data), &P)
 	P = remove.DeleteDuplicate(P, packageName)
 
