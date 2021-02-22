@@ -25,7 +25,7 @@ cd vanilla
 make
 sudo make install
 ```
-> Do not remove HOMW/.vanilla !
+> Do not remove HOME/.vanilla !
 
 ### If you want to remove just
 `sudo make remove`
